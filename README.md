@@ -3,7 +3,7 @@ In AlexNet’s first layer, the convolution window shape is 11 x 11. Since most 
 
 After the last convolutional layer are two fully-connected layers with 4096 outputs. These two huge fullyconnected layers produce model parameters of nearly 1 GB. Due to the limited memory in early GPUs, the original AlexNet used a dual data stream design, so that each of their two GPUs could be responsible for storing and computing only its half of the model. Fortunately, GPU memory is comparatively abundant now, so we rarely need to break up models across GPUs these days (our version of the AlexNet model deviates from the original paper in this aspect).
 ## AlexNet Structure
-![Alexnet](alexnet.png)
+![Alexnet](alexnet.svg)
 ## Sample data Used 
 Fashion MNSIT DataSet
 ![data](fashion_set_sample.png)
