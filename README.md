@@ -1,10 +1,11 @@
-#Modern Convolutional Networks and there Implementation using Pytorch
+# Modern Convolutional Networks and there Implementation using Pytorch
 
 ## Sample data Used 
-Fashion MNSIT DataSet
+### Fashion MNSIT DataSet
 ![data](Alexnet/fashion_set_sample.png)
 ## AlexNet Structure
 ![Alexnet](Alexnet/alexnet.svg)
+### code
 <code>
  class AlexNet(nn.Module):
 
