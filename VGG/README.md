@@ -1,54 +1,11 @@
-# Modern Convolutional Networks and there Implementation using Pytorch
-
-## Sample data Used 
-### Fashion MNSIT DataSet
-![data](Alexnet/fashion_set_sample.png)
-## AlexNet Structure
-![Alexnet](Alexnet/alexnet.svg)
-### code
-<code>
- class AlexNet(nn.Module):
-
-    def __init__(self, num_classes=1000):
-        super(AlexNet, self).__init__()
-        self.features = nn.Sequential(
-            nn.Conv2d(1, 64, kernel_size=11, stride=4, padding=2),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.Conv2d(64, 192, kernel_size=5, padding=2),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.Conv2d(192, 384, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(384, 256, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-        )
-        self.avgpool = nn.AdaptiveAvgPool2d((6, 6))
-        self.classifier = nn.Sequential(
-            nn.Dropout(),
-            nn.Linear(256 * 6 * 6, 4096),
-            nn.ReLU(inplace=True),
-            nn.Dropout(),
-            nn.Linear(4096, 4096),
-            nn.ReLU(inplace=True),
-            nn.Linear(4096, num_classes),
-        )
-
-    def forward(self, x):
-        x = self.features(x)
-        x = self.avgpool(x)
-        x = torch.flatten(x, 1)
-        x = self.classifier(x)
-        return x
-
-</code>
-
+# V G G 
+The basic building block of classic convolutional networks is a sequence of the following layers: (i) a convolutional layer (with padding to maintain the resolution), (ii) a nonlinearity such as a ReLu, One VGG block consists of a sequence of convolutional layers, followed by a max pooling layer for spatial downsampling. In the original VGG paper Simonyan.Zisserman.2014, the authors employed convolutions with $3\times3$ kernels and $2 \times 2$ max pooling with stride of $2$ (halving the resolution after each block). In the code below, we define a function called vgg_block to implement one VGG block. The function takes two arguments corresponding to the number of convolutional layers num_convs and the number of output channels num_channels.
 ## VGG Structure
-![VGG](VGG/VGG.svg)
-### code
+![Alexnet](VGG.svg)
+## Sample data Used 
+Fashion MNSIT DataSet
+![data](fashion_set_sample.png)
+## network used
 <code>
  Sequential(
   (0): Sequential(
@@ -92,4 +49,3 @@
   (12): Linear(in_features=4096, out_features=10, bias=True)
 )
 </code>
-
