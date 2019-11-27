@@ -47,7 +47,7 @@
 </code>
 
 ## VGG Structure
-![VGG](VGG/VGG.svg)
+![VGG](VGG_Blocks/VGG.svg)
 ### code
 <code>
  Sequential(
@@ -92,4 +92,55 @@
   (12): Linear(in_features=4096, out_features=10, bias=True)
 )
 </code>
+
+## NIN Structure
+![Alexnet](Network_in_Network/NIN.svg)
+## network used
+<code>
+ Net(
+  (n1): Sequential(
+    (0): Conv2d(1, 96, kernel_size=(11, 11), stride=(4, 4))
+    (1): ReLU()
+    (2): Conv2d(96, 96, kernel_size=(1, 1), stride=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(96, 96, kernel_size=(1, 1), stride=(1, 1))
+    (5): ReLU()
+  )
+  (m1): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (n2): Sequential(
+    (0): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (1): ReLU()
+    (2): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1))
+    (5): ReLU()
+  )
+  (m2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (n3): Sequential(
+    (0): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1))
+    (5): ReLU()
+  )
+  (m3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout2d(p=0.5, inplace=False)
+  (n4): Sequential(
+    (0): Conv2d(384, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(10, 10, kernel_size=(1, 1), stride=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(10, 10, kernel_size=(1, 1), stride=(1, 1))
+    (5): ReLU()
+  )
+  (avg1): AdaptiveMaxPool2d(output_size=(1, 1))
+  (flat): Flatten()
+)
+</code>
+
+## Loss Vs Number Of epoch
+![loss](Network_in_Network/loss.png)
+## Prediction
+![prediction](Network_in_Network/prediction.png)
 
