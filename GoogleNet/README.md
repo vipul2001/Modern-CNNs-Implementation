@@ -114,7 +114,7 @@ Fashion MNSIT DataSet
     (3): Flatten()
   )
   (5): Linear(in_features=1024, out_features=10, bias=True)
-)
+)it 
 </code>
 
 ## Loss Vs Number Of epoch
