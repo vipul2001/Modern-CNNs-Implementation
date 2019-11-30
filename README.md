@@ -261,4 +261,9 @@
 ![loss](GoogleNet/loss.png)
 ## Prediction
 ![prediction](GoogleNet/prediction.png)
-it 
+
+# Batch Normalization
+# Loss Function
+![loss](Batch_Normalization/loss.png)
+# Prediction
+![prediction](Batch_Normalization/prediction.png)

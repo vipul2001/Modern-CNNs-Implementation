@@ -16,5 +16,5 @@ We are now ready to take a look at how batch normalization works in practice.
 ![batch](batch.svg)
 # Loss Function
 ![loss](loss.png)
-# Predcition
-![prediction](predicion.png)
+# Prediction
+![prediction](prediction.png)
