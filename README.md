@@ -269,13 +269,13 @@
 ![prediction](Batch_Normalization/prediction.png)
 # DenseNet
 ## Model
-![](DenseNet.svg)
+![](DenseNet/DenseNet.svg)
 ## loss
-![loss](loss.png)
+![loss](DenseNet/loss.png)
 ##  Prediction
-![](prediction.png)
+![](DenseNet/prediction.png)
 ## Train Curve
-![](train_acc.png)
+![](DenseNet/train_acc.png)
 ## Network
 <code>
   Sequential(
